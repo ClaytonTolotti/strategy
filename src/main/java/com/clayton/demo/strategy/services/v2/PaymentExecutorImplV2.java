@@ -27,7 +27,7 @@ public class PaymentExecutorImplV2 implements PaymentExecutorV2 {
     }
 
     @Override
-    public void execute(Payment payment) {
+    public void execute(Payment payment) throws PaymentException {
         try {
             paymentServiceMap.get(payment.getPaymentType().name()).payment(payment);
         } catch (Exception e) {
