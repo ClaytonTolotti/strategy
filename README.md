@@ -1,1 +1,6 @@
-# strategy
+# Projeto Spring Boot 3.3.3 + Java 17
+## Possui 4 exemplos de implementação do Design Pattern Strategy
+* [PaymentExecutorImplV1.java](src%2Fmain%2Fjava%2Fcom%2Fclayton%2Fdemo%2Fstrategy%2Fservices%2Fv1%2FPaymentExecutorImplV1.java): Implementação baseada em condicional IF/ELSE para determinar o Strategy, não compliance Open/Closed do SOLID.
+* [PaymentExecutorImplV2.java](src%2Fmain%2Fjava%2Fcom%2Fclayton%2Fdemo%2Fstrategy%2Fservices%2Fv2%2FPaymentExecutorImplV2.java): Implementação baseada em Mapa de objetos, usando a chave para determinar o Strategy, 100% compliance Open/Closed do SOLID
+* [PaymentExecutorImplV3.java](src%2Fmain%2Fjava%2Fcom%2Fclayton%2Fdemo%2Fstrategy%2Fservices%2Fv3%2FPaymentExecutorImplV3.java): Implementação baseada no objeto ApplicationContext do Spring para determinar o Strategy, 100% compliance Open/Closed do SOLID
+* [PaymentExecutorImplV4.java](src%2Fmain%2Fjava%2Fcom%2Fclayton%2Fdemo%2Fstrategy%2Fservices%2Fv4%2FPaymentExecutorImplV4.java): Implementação baseada na api de Reflection do Java para determinar o Strategy, 100% compliance Open/Closed do SOLID, desde que siga o padrão de package para as próximas classes de implementação do Strategy
