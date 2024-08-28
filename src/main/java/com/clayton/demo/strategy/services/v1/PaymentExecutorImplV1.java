@@ -14,7 +14,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class PaymentExecutorImplV1 implements PaymentExecutorV1 {
 
-    public void execute(Payment payment) {
+    @Override
+    public void execute(Payment payment) throws PaymentException {
         PaymentStrategyService paymentStrategyService;
 
         if (payment.getPaymentType().equals(PaymentType.CREDIT_CARD)) {

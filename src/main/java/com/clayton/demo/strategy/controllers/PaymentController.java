@@ -1,5 +1,6 @@
 package com.clayton.demo.strategy.controllers;
 
+import com.clayton.demo.strategy.exceptions.PaymentException;
 import com.clayton.demo.strategy.models.Payment;
 import com.clayton.demo.strategy.services.v1.PaymentExecutorV1;
 import com.clayton.demo.strategy.services.v2.PaymentExecutorV2;
@@ -30,25 +31,25 @@ public class PaymentController {
 
     @PostMapping("v1/payments")
 
-    public ResponseEntity<Void> paymentsV1(@RequestBody Payment payment) {
+    public ResponseEntity<Void> paymentsV1(@RequestBody Payment payment) throws PaymentException {
         paymentExecutorV1.execute(payment);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PostMapping("v2/payments")
-    public ResponseEntity<Void> paymentsV2(@RequestBody Payment payment) {
+    public ResponseEntity<Void> paymentsV2(@RequestBody Payment payment) throws PaymentException {
         paymentExecutorV2.execute(payment);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PostMapping("v3/payments")
-    public ResponseEntity<Void> paymentsV3(@RequestBody Payment payment) {
+    public ResponseEntity<Void> paymentsV3(@RequestBody Payment payment) throws PaymentException {
         paymentExecutorV3.execute(payment);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PostMapping("v4/payments")
-    public ResponseEntity<Void> paymentsV4(@RequestBody Payment payment) throws Exception {
+    public ResponseEntity<Void> paymentsV4(@RequestBody Payment payment) throws PaymentException {
         paymentExecutorV4.execute(payment);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

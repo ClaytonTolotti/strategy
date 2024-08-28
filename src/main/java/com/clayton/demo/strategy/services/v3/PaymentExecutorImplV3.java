@@ -13,7 +13,8 @@ public class PaymentExecutorImplV3 implements PaymentExecutorV3 {
     @Autowired
     private ApplicationContext applicationContext;
 
-    public void execute(Payment payment) {
+    @Override
+    public void execute(Payment payment) throws PaymentException {
 
         try {
             PaymentStrategyService paymentStrategyService = (PaymentStrategyService) applicationContext.getBean(payment.getPaymentType().toString());

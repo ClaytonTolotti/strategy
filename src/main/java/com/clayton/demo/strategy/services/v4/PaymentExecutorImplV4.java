@@ -11,7 +11,7 @@ import java.lang.reflect.Constructor;
 public class PaymentExecutorImplV4 implements PaymentExecutorV4 {
 
     @Override
-    public void execute(Payment payment) {
+    public void execute(Payment payment) throws PaymentException {
         try {
             String packageName = PaymentStrategyService.class.getPackageName();
             String className = "%s.impl.%sPaymentStrategyServiceImpl".formatted(packageName, payment.getPaymentType().getValue());
